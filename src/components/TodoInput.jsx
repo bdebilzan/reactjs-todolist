@@ -1,7 +1,5 @@
-import { useState } from 'react'
-
 export default function TodoInput(props) {
-    const { handleAddTodos, todoValue, setTodoValue } = props
+    const { handleAddTodos, todoValue, setTodoValue, editing } = props
 
     return (
         <header>
@@ -11,7 +9,7 @@ export default function TodoInput(props) {
             <button onClick={() => {
                 handleAddTodos(todoValue)
                 setTodoValue('')
-            }}>Add</button>
+            }}>{editing ? "Save" : "Add"}</button>
         </header>
     )
 }
